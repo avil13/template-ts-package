@@ -1,0 +1,47 @@
+{
+  "name": "teplate-ts-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/types",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "dev": "ts-node --inspect=5858 --project tsconfig.json src/index.ts",
+    "dev:watch": "nodemon",
+    "test": "ava-ts",
+    "test:watch": "ava-ts --watch",
+    "type-check": "tsc -p . --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "rm -rf ./dist && tsc -p ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/es6-collections": "^0.5.31",
+    "@types/es6-promise": "^3.3.0",
+    "@types/es6-shim": "^0.31.39",
+    "@types/node": "^12.7.1",
+    "ava": "^2.2.0",
+    "ava-ts": "^0.25.2",
+    "dotenv": "^8.0.0",
+    "nodemon": "^1.19.1",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0",
+    "require-extension-hooks-module": "^0.1.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "ava": {
+    "verbose": true,
+    "compileEnhancements": true,
+    "files": [
+      "**/*.spec.[tj]s"
+    ],
+    "babel": {},
+    "extensions": [],
+    "require": [
+      "ts-node/register",
+      "./test/helpers/setup.js"
+    ]
+  }
+}
