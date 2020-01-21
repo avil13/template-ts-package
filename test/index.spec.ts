@@ -1,6 +1,7 @@
-import test from 'ava';
+import 'jest';
 
-
-test('index', t => {
-    t.true(true, 'ok');
+describe('Demo test', () => {
+  it('should demo test', () => {
+    expect(true).toBe(true);
+  });
 });
