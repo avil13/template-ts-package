@@ -5,21 +5,20 @@ module.exports = {
     node: true,
   },
 
+  parser: '@typescript-eslint/parser',
+
+  plugins: [
+    '@typescript-eslint',
+  ],
+
   extends: [
+    'airbnb-typescript/base', // Base for no React support
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
 
   rules: {
-    // Prettier
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-
     // JS
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -43,6 +42,6 @@ module.exports = {
   },
 
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    project: './tsconfig.json',
   },
 };
