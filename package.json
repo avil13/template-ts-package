@@ -18,7 +18,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && git update-index --again",
-      "pre-push": "yarn run lint:fix && yarn test",
+      "pre-push": "yarn test",
       "post-checkout": "yarn"
     }
   },
