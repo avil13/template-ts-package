@@ -2,3 +2,5 @@ node_modules
 dist
 coverage
 jest.config.js
+.eslintrc.js
+.prettierrc.js
