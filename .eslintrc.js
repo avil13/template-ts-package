@@ -3,37 +3,33 @@ module.exports = {
 
   env: {
     node: true,
+    browser: true,
   },
-
-  parser: '@typescript-eslint/parser',
-
-  parserOptions: {
-    createDefaultProgram: true,
-    project: './tsconfig.json',
-  },
-
-  plugins: [
-    '@typescript-eslint',
-  ],
 
   extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    'plugin:prettier/recommended',
+    'prettier',
   ],
 
   rules: {
+    // Prettier
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+
     // JS
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'comma-dangle': ['error', 'always-multiline'],
-    'no-underscore-dangle': 'off',
-    'no-restricted-syntax': 'off',
-    'consistent-return': 'off',
-    'class-methods-use-this': 'off',
-    'no-plusplus': 'off',
 
     // TS
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/non-any': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
@@ -52,6 +48,6 @@ module.exports = {
   },
 
   parserOptions: {
-    project: './tsconfig.json',
+    parser: '@typescript-eslint/parser',
   },
 };

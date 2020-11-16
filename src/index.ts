@@ -1,2 +1,0 @@
-// demo
-console.log('=>', 'work!');
