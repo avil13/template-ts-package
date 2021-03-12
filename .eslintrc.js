@@ -27,6 +27,7 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'consistent-return': 'off',
     'class-methods-use-this': 'off',
+    'import/prefer-default-export': 'off',
 
     // TS
     '@typescript-eslint/camelcase': 'off',
