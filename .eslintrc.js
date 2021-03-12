@@ -3,23 +3,19 @@ module.exports = {
 
   env: {
     node: true,
+    browser: true,
   },
 
   parser: '@typescript-eslint/parser',
 
   parserOptions: {
     createDefaultProgram: true,
+    parser: '@typescript-eslint/parser',
     project: './tsconfig.json',
   },
 
-  plugins: [
-    '@typescript-eslint',
-  ],
-
   extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    'airbnb-typescript/base',
   ],
 
   rules: {
@@ -31,17 +27,15 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'consistent-return': 'off',
     'class-methods-use-this': 'off',
-    'no-plusplus': 'off',
 
     // TS
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/object-curly-spacing': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
       {
