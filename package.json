@@ -3,6 +3,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "name": "template-ts-package",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "lerna run test --stream",
     "bootstrap": "lerna bootstrap",
