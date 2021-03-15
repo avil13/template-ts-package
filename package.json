@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "types": "dist",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "dev": "ts-node --project tsconfig.json src/index.ts",
